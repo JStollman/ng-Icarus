@@ -24,7 +24,7 @@ export class UserCreateComponent implements OnInit {
   ngOnInit(): void{}
 
   onSubmit(): void{
-    console.log(this.user);
+
     this.usersService.createUser(this.user).subscribe(
       (response:any) => {
         this.response(response);
@@ -37,9 +37,6 @@ export class UserCreateComponent implements OnInit {
     if(response.success===false){
       this.errors = response.error.errors;
       this.errorMessage = response.error._message;
-
-      console.log(this.errors);
-      console.log(this.errorMessage);
     }
 
     if(response.success===true){

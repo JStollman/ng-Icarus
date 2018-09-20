@@ -8,6 +8,6 @@
     <strong>Email:</strong> {{ user.email }}
   </div>
 
-  <button>Edit</button>
+  <button [routerLink]="['/users/edit/', user._id]">Edit</button>
   <button>Delete</button>
 </div>
