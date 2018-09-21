@@ -1,0 +1,10 @@
+<div *ngIf="article">
+  <h1>{{ article.title }}</h1>
+  <div>{{ article.body }}</div>
+
+  <div class="actions">
+    <button mat-button [routerLink]="['/articles/edit/', article.slug]">Edit</button>
+    <button mat-button (click)="deleteArticle(article._id)">Delete</button>
+  </div>
+
+</div>

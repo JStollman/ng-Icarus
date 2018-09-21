@@ -1,0 +1,24 @@
+<h1>Create a New Article</h1>
+
+<form (ngSubmit)="onSubmit()" #createArticle="ngForm">
+
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+
+  <mat-form-field>
+    <label for="title">Title</label>
+    <input matInput placeholder="Title" [(ngModel)]="article.title" name="title" id="title" type="text">
+    <div  class="error" *ngIf="errors.title">{{ errors.title.message }}</div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label for="body">Body</label>
+    <input matInput placeholder="Body" [(ngModel)]="article.body" name="body" id="body" type="text">
+  </mat-form-field>
+
+
+  <div>
+    <br>
+    <button mat-flat-button color="primary" type="submit">Submit</button>
+  </div>
+</form>

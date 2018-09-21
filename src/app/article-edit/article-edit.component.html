@@ -1,0 +1,22 @@
+<h1 *ngIf="article">Edit {{ article.first_name }} {{ article.last_name }}</h1>
+
+<form *ngIf="article" (ngSubmit)="onSubmit()" #createArticle="ngForm">
+
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <input [(ngModel)]="article._id" name="_id" id="_id" type="hidden">
+
+  <mat-form-field>
+    <label for="title">Title</label>
+    <input matInput placeholder="Title" [(ngModel)]="article.title" name="title" id="title" type="text">
+    <div class="error" *ngIf="errors.title">{{ errors.title.message }}</div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label for="body">Body</label>
+    <input matInput placeholder="Body" [(ngModel)]="article.body" name="body" id="body" type="text">
+  </mat-form-field>
+
+  <button type="submit">Submit</button>
+
+</form>

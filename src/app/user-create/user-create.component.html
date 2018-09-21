@@ -3,29 +3,33 @@
 <form (ngSubmit)="onSubmit()" #createUser="ngForm">
 
   <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
-  <div>
+
+
+  <mat-form-field>
     <label for="username">Username</label>
-    <input [(ngModel)]="user.username" name="username" id="username" type="text">
-    <div class="error" *ngIf="errors.username">{{ errors.username.message }}</div>
-  </div>
+    <input matInput placeholder="Username" [(ngModel)]="user.username" name="username" id="username" type="text">
+    <div  class="error" *ngIf="errors.username">{{ errors.username.message }}</div>
+  </mat-form-field>
 
-  <div>
+  <mat-form-field>
     <label for="email">Email</label>
-    <input [(ngModel)]="user.email" name="email" id="email" type="text">
+    <input matInput placeholder="Email" [(ngModel)]="user.email" name="email" id="email" type="text">
     <div class="error" *ngIf="errors.email">{{ errors.email.message }}</div>
-  </div>
+  </mat-form-field>
 
 
-  <div>
+  <mat-form-field>
     <label for="first_name">First name</label>
-    <input [(ngModel)]="user.first_name" name="first_name" id="first_name" type="text">
-  </div>
+    <input matInput placeholder="First Name" [(ngModel)]="user.first_name" name="first_name" id="first_name" type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <label for="last_name">Last Name</label>
+    <input matInput placeholder="Last Name" [(ngModel)]="user.last_name" name="last_name" id="last_name" type="text">
+  </mat-form-field>
 
   <div>
-    <label for="last_name">Last Name</label>
-    <input [(ngModel)]="user.last_name" name="last_name" id="last_name" type="text">
+    <br>
+    <button mat-flat-button color="primary" type="submit">Submit</button>
   </div>
-
-  <button type="submit">Submit</button>
-
 </form>

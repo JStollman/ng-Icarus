@@ -1,0 +1,23 @@
+
+.wrapper{
+  display: flex;
+}
+
+nav {
+  height: 100vh;
+  flex: 200px 0 0;
+  background: #3f51b5;
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06);
+  box-shadow: 2px 0 1px 0 rgba(0,0,0,.4);
+}
+
+main {
+  flex: 1;
+  margin: 0 0 0 1rem;
+
+}
+
+nav button{
+  display: block;
+  width: 100%;
+}

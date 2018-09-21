@@ -1,6 +1,9 @@
 <h1>Users</h1>
-<ul *ngIf="users">
-  <li *ngFor="let user of users">
-    <a [routerLink]="['/users/view/', user._id]">{{ user.username }}</a>
-  </li>
-</ul>
+<div *ngIf="users">
+  <mat-card *ngFor="let user of users" [routerLink]="['/users/view/', user._id]">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>account_circle</mat-icon>
+      <mat-card-title>{{ user.username }}</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>

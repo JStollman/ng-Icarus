@@ -1,0 +1,8 @@
+<h1>Articles</h1>
+<div *ngIf="articles">
+  <mat-card *ngFor="let article of articles" [routerLink]="['/articles/view/', article.slug]">
+    <mat-card-header>
+      <mat-card-title>{{ article.title }}</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>
